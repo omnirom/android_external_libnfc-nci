@@ -1230,6 +1230,28 @@ NFC_API extern tNFA_STATUS NFA_SendVsCommand (UINT8            oid,
                                               UINT8            *p_cmd_params,
                                               tNFA_VSC_CBACK   *p_cback);
 
+
+/*******************************************************************************
+**
+** Function         NFA_SendNxpNciCommand
+**
+** Description      This function is called to send NXP NCI Vendor Specific
+**                  command to NFCC.
+**
+**                  cmd_params_len  - The command parameter len
+**                  p_cmd_params    - The command parameter
+**                  p_cback         - The callback function to receive the command
+**
+** Returns          NFA_STATUS_OK if successfully initiated
+**                  NFA_STATUS_FAILED otherwise
+**
+*******************************************************************************/
+
+NFC_API extern tNFA_STATUS NFA_SendNxpNciCommand (UINT8            cmd_params_len,
+                                                  UINT8            *p_cmd_params,
+                                                  tNFA_VSC_CBACK   *p_cback);
+
+
 /*******************************************************************************
 **
 ** Function         NFA_SetTraceLevel

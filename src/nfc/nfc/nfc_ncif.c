@@ -285,6 +285,12 @@ void nfc_ncif_check_cmd_queue (BT_HDR *p_buf)
                 /* save the callback for NCI VSCs)  */
                 nfc_cb.p_vsc_cback = (void *)((tNFC_NCI_VS_MSG *)p_buf)->p_cback;
             }
+            else if (p_buf->layer_specific == NFC_WAIT_RSP_NXP)
+            {
+                /* save the callback for NCI NXPs)  */
+                nfc_cb.p_vsc_cback = (void *)((tNFC_NCI_VS_MSG *)p_buf)->p_cback;
+                nfc_cb.nxpCbflag = TRUE;
+            }
 
             /* send to HAL */
             HAL_WRITE(p_buf);
@@ -373,6 +379,13 @@ BOOLEAN nfc_ncif_process_event (BT_HDR *p_msg)
 
     p = (UINT8 *) (p_msg + 1) + p_msg->offset;
 
+
+    if (nfc_cb.nxpCbflag == TRUE)
+    {
+        nci_proc_prop_nxp_rsp(p_msg);
+        nfc_cb.nxpCbflag = FALSE;
+        return (free);
+    }
     pp = p;
     NCI_MSG_PRS_HDR0 (pp, mt, pbf, gid);
 

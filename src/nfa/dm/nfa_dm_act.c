@@ -871,6 +871,28 @@ BOOLEAN nfa_dm_act_send_vsc(tNFA_DM_MSG *p_data)
 
 /*******************************************************************************
 **
+** Function         nfa_dm_act_send_nxp
+**
+** Description      Send the NXP NCI command to the NCI command queue
+**
+** Returns          FALSE (message buffer is NOT freed by caller)
+**
+*******************************************************************************/
+BOOLEAN nfa_dm_act_send_nxp(tNFA_DM_MSG *p_data)
+{
+    BT_HDR  *p_cmd = (BT_HDR *)p_data;
+
+    p_cmd->offset   = sizeof (tNFA_DM_API_SEND_VSC) - BT_HDR_SIZE;
+    p_cmd->len      = p_data->send_vsc.cmd_params_len;
+    NFC_SendNxpNciCommand (p_cmd, p_data->send_vsc.p_cback);
+
+    /* Most dm action functions return TRUE, so nfa-sys frees the GKI buffer carrying the message,
+     * This action function re-use the GKI buffer to send the VSC, so the GKI buffer can not be freed by nfa-sys */
+    return (FALSE);
+}
+
+/*******************************************************************************
+**
 ** Function         nfa_dm_start_polling
 **
 ** Description      Start polling

@@ -79,7 +79,8 @@ const tNFA_DM_ACTION nfa_dm_action[] =
     nfa_dm_ndef_dereg_hdlr,             /* NFA_DM_API_DEREG_NDEF_HDLR_EVT       */
     nfa_dm_act_reg_vsc,                 /* NFA_DM_API_REG_VSC_EVT               */
     nfa_dm_act_send_vsc,                /* NFA_DM_API_SEND_VSC_EVT              */
-    nfa_dm_act_disable_timeout          /* NFA_DM_TIMEOUT_DISABLE_EVT           */
+    nfa_dm_act_disable_timeout,          /* NFA_DM_TIMEOUT_DISABLE_EVT           */
+    nfa_dm_act_send_nxp                 /* NFA_DM_API_SEND_NXP_EVT              */
 };
 
 /*****************************************************************************
