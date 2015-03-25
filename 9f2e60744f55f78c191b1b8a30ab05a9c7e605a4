@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b22818b_3ca8b2d7",
+        "filename": "halimpl/pn54x/tml/phTmlNfc_i2c.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1000026
+      },
+      "writtenOn": "2015-03-25T12:50:50Z",
+      "side": 1,
+      "message": "nitpicking - why change what doesnt need change? :)",
+      "revId": "9f2e60744f55f78c191b1b8a30ab05a9c7e605a4",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
