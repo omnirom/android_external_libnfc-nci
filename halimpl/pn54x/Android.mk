@@ -25,7 +25,7 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
-LOCAL_MODULE := nfc_nci.$(TARGET_DEVICE)
+LOCAL_MODULE := nfc_nci.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_SRC_FILES := $(call all-c-files-under, .)  $(call all-cpp-files-under, .)
 LOCAL_SHARED_LIBRARIES := liblog libcutils libhardware_legacy libdl libhardware
