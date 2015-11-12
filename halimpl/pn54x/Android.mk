@@ -25,7 +25,7 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
-LOCAL_MODULE := nfc_nci.$(TARGET_DEVICE)
+LOCAL_MODULE := nfc_nci.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_SRC_FILES := $(call all-c-files-under, .)  $(call all-cpp-files-under, .)
 LOCAL_SHARED_LIBRARIES := liblog libcutils libhardware_legacy libdl libhardware
@@ -53,7 +53,11 @@ LOCAL_CFLAGS += -DPN548C2=2
 endif
 
 #### Select the CHIP ####
+ifeq ($(NFC_NXP_CHIP_TYPE),PN547C2)
+LOCAL_CFLAGS += -DNFC_NXP_CHIP_TYPE=PN547C2
+else
 LOCAL_CFLAGS += -DNFC_NXP_CHIP_TYPE=PN548C2
+endif
 
 LOCAL_CFLAGS += -DANDROID \
         -DNXP_UICC_ENABLE -DNXP_HW_SELF_TEST
