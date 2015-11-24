@@ -52,6 +52,7 @@ include $(BUILD_SHARED_LIBRARY)
 ######################################
 # Build shared library system/lib/hw/nfc_nci.*.so for Hardware Abstraction Layer.
 # Android's generic HAL (libhardware.so) dynamically loads this shared library.
+ifneq ($(call match-word-in-list,$(NFC_NXP_CHIP_TYPE),PN547C2 PN548C2),true)
 
 include $(CLEAR_VARS)
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
@@ -77,6 +78,7 @@ LOCAL_CFLAGS := $(D_CFLAGS) -DNFC_HAL_TARGET=TRUE -DNFC_RW_ONLY=TRUE
 LOCAL_CPPFLAGS := $(LOCAL_CFLAGS)
 include $(BUILD_SHARED_LIBRARY)
 
+endif
 
 ######################################
 include $(call all-makefiles-under,$(LOCAL_PATH))
