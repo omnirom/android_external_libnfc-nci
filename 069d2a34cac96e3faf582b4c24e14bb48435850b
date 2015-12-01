@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b8f5b13e_b484ecdb",
+        "filename": "halimpl/pn54x/Android.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000515
+      },
+      "writtenOn": "2015-12-01T23:20:49Z",
+      "side": 1,
+      "message": "please, don\u0027t change here. Just for future aosp merges reasons.",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 4
+      },
+      "revId": "069d2a34cac96e3faf582b4c24e14bb48435850b",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b8f5b13e_9489e8f4",
+        "filename": "halimpl/pn54x/Android.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000515
+      },
+      "writtenOn": "2015-12-01T23:20:49Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "069d2a34cac96e3faf582b4c24e14bb48435850b",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
