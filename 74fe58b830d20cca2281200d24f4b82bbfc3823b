@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b8f5b13e_f44714c0",
+        "filename": "halimpl/pn54x/hal/phNxpNciHal.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 1000515
+      },
+      "writtenOn": "2015-12-01T23:02:33Z",
+      "side": 0,
+      "message": "because it is the default value",
+      "range": {
+        "startLine": 474,
+        "startChar": 43,
+        "endLine": 474,
+        "endChar": 48
+      },
+      "revId": "74fe58b830d20cca2281200d24f4b82bbfc3823b",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
