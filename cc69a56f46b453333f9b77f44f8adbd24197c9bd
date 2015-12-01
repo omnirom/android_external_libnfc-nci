@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b8f5b13e_d42d30fe",
+        "filename": "halimpl/pn54x/Android.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000515
+      },
+      "writtenOn": "2015-12-01T22:39:46Z",
+      "side": 1,
+      "message": "shouldn\u0027t be /dev/pn54x",
+      "range": {
+        "startLine": 28,
+        "startChar": 29,
+        "endLine": 28,
+        "endChar": 30
+      },
+      "revId": "cc69a56f46b453333f9b77f44f8adbd24197c9bd",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
