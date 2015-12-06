@@ -25,7 +25,7 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm
 
 ifeq ($(BOARD_NFC_DEVICE),)
-    NFC_DEVICE := "/dev/pn54x"
+    NFC_DEVICE := /dev/pn54x
 else
     NFC_DEVICE := $(BOARD_NFC_DEVICE)
 endif
