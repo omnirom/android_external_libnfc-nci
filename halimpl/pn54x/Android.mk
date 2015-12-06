@@ -12,11 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(BOARD_NFC_DEVICE),)
-    NFC_DEVICE := "/dev/pn54x"
-else
-    NFC_DEVICE := $(BOARD_NFC_DEVICE)
-endif
 
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
@@ -57,6 +52,11 @@ LOCAL_CFLAGS += -DANDROID \
         -DNXP_UICC_ENABLE -DNXP_HW_SELF_TEST
 LOCAL_CFLAGS += -DNFC_NXP_HFO_SETTINGS=FALSE
 #LOCAL_CFLAGS += -DFELICA_CLT_ENABLE
+
+NFC_DEVICE := /dev/pn54x
+ifneq ($(BOARD_NFC_DEVICE),)
+    NFC_DEVICE := $(BOARD_NFC_DEVICE)
+endif
 
 LOCAL_CFLAGS += -DNXP_NFC_DEVICE="\"$(NFC_DEVICE)\""
 
