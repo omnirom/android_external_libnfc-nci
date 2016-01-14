@@ -12,12 +12,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+<<<<<<< HEAD
 ifeq ($(BOARD_NFC_DEVICE),)
     NFC_DEVICE := "/dev/pn54x"
 else
     NFC_DEVICE := $(BOARD_NFC_DEVICE)
 endif
 
+=======
+
+# function to find all *.cpp files under a directory
+define all-cpp-files-under
+$(patsubst ./%,%, \
+  $(shell cd $(LOCAL_PATH) ; \
+          find $(1) -name "*.cpp" -and -not -name ".*") \
+ )
+endef
+
+LOCAL_PRELINK_MODULE := false
+LOCAL_ARM_MODE := arm
+>>>>>>> 5daca68... Revert "libnfc-nci: Add NXP chip type disambiguation"
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE := nfc_nci.$(TARGET_BOARD_PLATFORM)
@@ -57,7 +71,5 @@ LOCAL_CFLAGS += -DANDROID \
         -DNXP_UICC_ENABLE -DNXP_HW_SELF_TEST
 LOCAL_CFLAGS += -DNFC_NXP_HFO_SETTINGS=FALSE
 #LOCAL_CFLAGS += -DFELICA_CLT_ENABLE
-
-LOCAL_CFLAGS += -DNXP_NFC_DEVICE="\"$(NFC_DEVICE)\""
 
 include $(BUILD_SHARED_LIBRARY)
