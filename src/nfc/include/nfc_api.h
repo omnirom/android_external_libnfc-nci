@@ -87,6 +87,7 @@ typedef UINT8 tNFC_STATUS;
 #define NFC_PMID_PB_BAILOUT         NCI_PARAM_ID_PB_BAILOUT
 #define NFC_PMID_PB_ATTRIB_PARAM1   NCI_PARAM_ID_PB_ATTRIB_PARAM1
 #define NFC_PMID_PF_BIT_RATE        NCI_PARAM_ID_PF_BIT_RATE
+#define NFC_PMID_PF_RC              NCI_PARAM_ID_PF_RC
 #define NFC_PMID_PB_H_INFO          NCI_PARAM_ID_PB_H_INFO
 #define NFC_PMID_BITR_NFC_DEP       NCI_PARAM_ID_BITR_NFC_DEP
 #define NFC_PMID_ATR_REQ_GEN_BYTES  NCI_PARAM_ID_ATR_REQ_GEN_BYTES
@@ -592,11 +593,11 @@ typedef struct
 /* the data type associated with NFC_RESULT_DEVT */
 typedef struct
 {
-    tNFC_STATUS             status;         /* The event status - place holder. */
-    UINT8                   rf_disc_id;     /* RF Discovery ID                  */
-    UINT8                   protocol;       /* supported protocol               */
-    tNFC_RF_TECH_PARAMS     rf_tech_param;  /* RF technology parameters         */
-    BOOLEAN                 more;           /* 0: last notification             */
+    tNFC_STATUS             status;         /* The event status - place holder.  */
+    UINT8                   rf_disc_id;     /* RF Discovery ID                   */
+    UINT8                   protocol;       /* supported protocol                */
+    tNFC_RF_TECH_PARAMS     rf_tech_param;  /* RF technology parameters          */
+    UINT8                   more;           /* 0: last, 1: last (limit), 2: more */
 } tNFC_RESULT_DEVT;
 
 /* the data type associated with NFC_SELECT_DEVT */
